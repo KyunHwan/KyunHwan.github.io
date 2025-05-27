@@ -1,0 +1,4 @@
+title: "Peter Kim"
+remote_theme: pages-themes/cayman@v0.2.0   # swap for any official theme
+plugins:
+  - jekyll-feed    # RSS
