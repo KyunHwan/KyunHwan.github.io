@@ -1,13 +1,19 @@
+# --- basic info ---------------------------------------------------------------
 title: "Peter Kim"
-remote_theme: jekflix   # swap for any official theme
-plugins:
-  - jekyll-feed    # RSS
-  
+remote_theme: thiagorossener/jekflix-template   # swap for any official theme
+url: "https://KyunHwan.github.io"
+
+# --- collections --------------------------------------------------------------
 collections:
     projections:
         output: true
     poems:
         output: true
+
+# --- plugins ------------------------------------------------------------------
+plugins:
+  - jekyll-feed    # RSS
+
 tags:
   - blog
   - template
