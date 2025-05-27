@@ -3,10 +3,10 @@ layout: home
 title: Home
 ---
 
-<div class="home-container">
+<div class="hero-content">
   <div class="profile-section">
     <div class="profile-image">
-      <img src="/assets/images/profile.jpg" alt="Peter Kim" class="profile-photo">
+      <img src="assets/images/profile.jpg" alt="Peter Kim" class="profile-photo">
     </div>
     <div class="profile-info">
       <h1>Peter Kim</h1>
@@ -23,10 +23,13 @@ title: Home
 </div>
 
 <style>
-.home-container {
+.hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  padding-top: 6rem;
 }
 
 .profile-section {
@@ -34,6 +37,9 @@ title: Home
   align-items: center;
   gap: 3rem;
   margin-top: 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 8px;
 }
 
 .profile-image {
@@ -49,6 +55,7 @@ title: Home
 
 .profile-info {
   flex: 1;
+  color: white;
 }
 
 .profile-description {

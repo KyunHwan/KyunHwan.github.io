@@ -3,6 +3,13 @@ title: "Peter Kim"
 remote_theme: thiagorossener/jekflix-template   # swap for any official theme
 url: "https://KyunHwan.github.io"
 
+# Hero image settings
+show_hero: true
+hero_image: "assets/img/hero/hero-bg.jpg"
+hero_image_alt: "Background image"
+hero_height: 100vh
+hero_darken: true
+
 # --- collections --------------------------------------------------------------
 collections:
     projects:
@@ -27,7 +34,6 @@ tags:
   - photography
   - projects
 email: youremail@xyz.com
-show_hero: true
 menu:
   - title: Home
     url: /
