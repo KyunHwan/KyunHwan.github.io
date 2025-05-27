@@ -5,33 +5,38 @@ url: "https://KyunHwan.github.io"
 
 # --- collections --------------------------------------------------------------
 collections:
-    projections:
+    projects:
         output: true
+        permalink: /projects/:title/
     poems:
         output: true
+        permalink: /poems/:title/
+    photos:
+        output: true
+        permalink: /photos/:title/
 
 # --- plugins ------------------------------------------------------------------
 plugins:
-  - jekyll-feed    # RSS
+  - jekyll-paginate
+  - jekyll-paginate-content
+  - jekyll-seo-tag
 
 tags:
-  - blog
-  - template
-  - jekyll
-  - theme
-  - netlify
+  - portfolio
+  - poetry
+  - photography
+  - projects
 email: youremail@xyz.com
-disqus_username: disqus_username
 show_hero: true
 menu:
   - title: Home
     url: /
-  - title: About
-    url: /about
-  - title: Contact
-    url: /contact
-  - title: Feed
-    url: /feed.xml
+  - title: Projects
+    url: /projects
+  - title: Poetry
+    url: /poems
+  - title: Photos
+    url: /photos
 
 # Social Media Settings
 # Remove the item if you don't need it
@@ -54,7 +59,6 @@ url: "" # the base hostname & protocol for your site
 google_analytics: "UA-XXXXXXXX-X"
 language: "en"
 categories_folder: category
-sent_message_url: "/contact/message-sent/"
 
 # Build settings
 markdown: kramdown
@@ -89,7 +93,5 @@ paginate_content:
 sass:
   style: compressed
 
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-paginate-content
+# Site Settings
+description: "Personal website of Peter Kim - Projects, Poetry, and Photography"
