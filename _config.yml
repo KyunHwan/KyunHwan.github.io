@@ -1,4 +1,11 @@
 title: "Peter Kim"
-remote_theme: pages-themes/modernist@v0.2.0   # swap for any official theme
+remote_theme: jekflix   # swap for any official theme
 plugins:
   - jekyll-feed    # RSS
+  
+collections:
+    projections:
+        output: true
+    poems:
+        output: true
+
