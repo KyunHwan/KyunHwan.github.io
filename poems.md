@@ -1,13 +1,17 @@
 ---
 layout: default
 title: Poems
+class: poems-page
+permalink: /poems/
 ---
 
-# My Poems
+# Poems
 
-A collection of my poetry:
-
-{% for poem in site.poems %}
-## [{{ poem.title }}]({{ poem.url | relative_url }})
-{{ poem.excerpt }}
-{% endfor %} 
+<div class="card-grid">
+  {% for poem in site.poems %}
+    <a class="card" href="{{ poem.url | relative_url }}">
+      <h2>{{ poem.title }}</h2>
+      <p>{{ poem.excerpt | strip_html | truncate: 100 }}</p>
+    </a>
+  {% endfor %}
+</div>

@@ -1,148 +1,221 @@
+/* Dracula Color Variables */
+:root {
+    --bg: #282a36;
+    --line: #44475a;
+    --fg: #f8f8f2;
+    --comment: #6272a4;
+    --cyan: #8be9fd;
+    --green: #50fa7b;
+    --orange: #ffb86c;
+    --pink: #ff79c6;
+    --purple: #bd93f9;
+    --red: #ff5555;
+    --yellow: #f1fa8c;
+  }
+
 /* Basic Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Base Styles */
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--fg);
+  background-color: var(--bg);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Override for full-background pages */
-.full-width {
-    max-width: none;
-    margin: 0;
-    padding: 0;
+body.full-width {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-/* Full Page Background */
+/* Full Page Background with Gradient Support */
 .background-full {
+  background-blend-mode: normal;
+  background-color: var(--bg);
+  width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: var(--fg);
+  overflow-x: hidden;
+}
+
+/* Background Layers */
+.projects-bg {
+    background-image:
+      url('/assets/images/projects.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh;
-    padding: 2rem;
+    background-color: #282a36;
+    background-blend-mode: normal;
+  }
+
+.poems-bg {
+  background-image:
+    url('/assets/images/poems.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #282a36;
+  background-blend-mode: normal;
 }
 
 /* Header */
+body.full-width header {
+  background-color: transparent;
+}
+
 header {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  z-index: 1;
 }
 
 nav {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 nav a {
-    text-decoration: none;
-    color: #333;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+  text-decoration: none;
+  color: var(--fg);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 nav a:hover {
-    background-color: #f0f0f0;
+  background-color: var(--line);
 }
 
 /* Main Content */
 main {
-    min-height: 70vh;
+  flex-grow: 1;
+  width: 100%;
+  padding: 2rem;
+}
+
+h1, h2 {
+  color: var(--fg);
 }
 
 h1 {
-    margin-bottom: 1.5rem;
-    color: #2c3e50;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
-    margin: 1.5rem 0 1rem;
-    color: #34495e;
+  margin: 1.5rem 0 1rem;
 }
 
 /* Profile Image */
 .profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 1rem auto;
-    display: block;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 1rem auto;
+  display: block;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 /* Floating Card Grid */
 .card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 1rem;
-    width: 280px;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-    transition: transform 0.2s ease;
+  background: var(--line);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  padding: 1rem;
+  width: 280px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--fg);
+  transition: transform 0.2s ease, background-color 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
+  background-color: var(--purple);
+  color: var(--bg);
 }
 
 /* Project & Poem Section Base */
 .project, .poem {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    border-radius: 8px;
-    background-color: #f8f9fa;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--line);
 }
 
 /* Poem Page Layout */
 .poem-layout {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: flex-start;
-    margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 2rem;
 }
 
 .poem-text {
-    flex: 2;
-    white-space: pre-wrap;
+  flex: 2;
+  white-space: pre-wrap;
 }
 
 .poem-image {
-    flex: 1;
+  flex: 1;
 }
 
 .poem-image img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
 
 /* Footer */
-footer {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
-    text-align: center;
-    color: #666;
+body.full-width footer {
+  background-color: transparent;
 }
 
+footer {
+  margin-top: auto;
+  padding: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  color: var(--comment);
+}
+
+/* Title over Backgrounds */
+.page-title {
+  text-align: center;
+  color: var(--fg);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}

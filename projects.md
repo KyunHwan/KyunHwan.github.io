@@ -1,13 +1,17 @@
 ---
 layout: default
 title: Projects
+class: projects-page
+permalink: /projects/
 ---
 
-# My Projects
+# Projects
 
-Here are some of the projects I've worked on:
-
-{% for project in site.projects %}
-## [{{ project.title }}]({{ project.url | relative_url }})
-{{ project.excerpt }}
-{% endfor %} 
+<div class="card-grid">
+  {% for project in site.projects %}
+    <a class="card" href="{{ project.url | relative_url }}">
+      <h2>{{ project.title }}</h2>
+      <p>{{ project.excerpt | strip_html | truncate: 100 }}</p>
+    </a>
+  {% endfor %}
+</div>
