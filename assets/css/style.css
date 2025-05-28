@@ -228,13 +228,13 @@ h2 { margin: 1.5vh 0 1vh; }
 
 /* Card Grid -------------------------------------------------------------- */
 .card-grid-container {
-  max-height: 100%;       /* Adjust based on design */
+  max-height: 50vh;       /* Adjust based on design */
   overflow-y: auto;
 }
 
 .card-grid {
   display: grid;
-  max-width: 70vw;
+  max-width: 60vw;
   grid-template-columns: repeat(3, 1fr);
   gap: 2vw;
   justify-content: center;
