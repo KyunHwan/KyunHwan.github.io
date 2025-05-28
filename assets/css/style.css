@@ -69,19 +69,19 @@ body.full-width {
 .about-bg          { background-image: url('/assets/images/landscape/about.png'); }
 .projects-bg       { background-image: url('/assets/images/landscape/projects.png'); }
 .poems-bg          { background-image: url('/assets/images/landscape/poems.png'); }
-.sound-of-spring-bg{ background-image: url('assets/images/landscape/sound_of_spring.png'); }
-.yearning-bg       { background-image: url('assets/images/landscape/flight.png'); }
-.starry-night-bg   { background-image: url('assets/images/landscape/starry_night.png'); }
-.labyrinth-bg      { background-image: url('assets/images/landscape/labyrinth.png'); }
+.sound-of-spring-bg{ background-image: url('/assets/images/landscape/sound_of_spring.png'); }
+.yearning-bg       { background-image: url('/assets/images/landscape/flight.png'); }
+.starry-night-bg   { background-image: url('/assets/images/landscape/starry_night.png'); }
+.labyrinth-bg      { background-image: url('/assets/images/landscape/labyrinth.png'); }
 
 @media screen and (orientation: portrait) {
-  .about-bg          { background-image: url('assets/images/portrait/about.png'); }
-  .projects-bg       { background-image: url('assets/images/portrait/projects.png'); }
-  .poems-bg          { background-image: url('assets/images/portrait/poems.png'); }
-  .sound-of-spring-bg{ background-image: url('assets/images/portrait/sound_of_spring.png'); }
-  .yearning-bg       { background-image: url('assets/images/portrait/flight.png'); }
-  .starry-night-bg   { background-image: url('assets/images/portrait/starry_night.png'); }
-  .labyrinth-bg      { background-image: url('assets/images/portrait/labyrinth.png'); }
+  .about-bg          { background-image: url('/assets/images/portrait/about.png'); }
+  .projects-bg       { background-image: url('/assets/images/portrait/projects.png'); }
+  .poems-bg          { background-image: url('/assets/images/portrait/poems.png'); }
+  .sound-of-spring-bg{ background-image: url('/assets/images/portrait/sound_of_spring.png'); }
+  .yearning-bg       { background-image: url('/assets/images/portrait/flight.png'); }
+  .starry-night-bg   { background-image: url('/assets/images/portrait/starry_night.png'); }
+  .labyrinth-bg      { background-image: url('/assets/images/portrait/labyrinth.png'); }
 }
 
 /* Header & Nav ----------------------------------------------------------- */
