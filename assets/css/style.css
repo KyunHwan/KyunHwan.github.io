@@ -29,6 +29,8 @@ body {
   line-height: 1.6;
   color: var(--fg);
   background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
 }
 
 body.full-width {
@@ -108,6 +110,12 @@ nav a {
 
 nav a:hover {
   background-color: var(--line);
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Main Layout ------------------------------------------------------------ */
@@ -272,7 +280,6 @@ h2 { margin: 1.5vh 0 1vh; }
 
 /* Footer ----------------------------------------------------------------- */
 footer {
-  margin-top: auto;
   padding: 1vh;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
