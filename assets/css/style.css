@@ -1,80 +1,64 @@
-/* Dracula Color Variables */
+/* Dracula Theme Variables */
 :root {
-    --bg: #282a36;
-    --line: #44475a;
-    --fg: #f8f8f2;
-    --comment: #6272a4;
-    --cyan: #8be9fd;
-    --green: #50fa7b;
-    --orange: #ffb86c;
-    --pink: #ff79c6;
-    --purple: #bd93f9;
-    --red: #ff5555;
-    --yellow: #f1fa8c;
-  }
+  --bg: #282a36;
+  --line: #44475a;
+  --fg: #f8f8f2;
+  --comment: #6272a4;
+  --cyan: #8be9fd;
+  --green: #50fa7b;
+  --orange: #ffb86c;
+  --pink: #ff79c6;
+  --purple: #bd93f9;
+  --red: #ff5555;
+  --yellow: #f1fa8c;
+}
 
-/* Basic Reset */
+/* Reset & Base ------------------------------------------------------------ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Base Styles */
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-}
-
-body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   color: var(--fg);
   background-color: var(--bg);
-  width: 100%;
-  overflow-x: hidden;
 }
 
-/* Override for full-background pages */
 body.full-width {
-  max-width: none;
-  width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  width: 100%;
 }
 
-/* Full Page Background with Gradient Support */
+/* ------------------------------------------------------------------------ */
+/* Background Templates                                                    */
+/* ------------------------------------------------------------------------ */
 .background-full {
-  background-blend-mode: normal;
   background-color: var(--bg);
-  width: 100vw;
-  min-height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   color: var(--fg);
-  overflow-x: hidden;
 }
 
-/* Background Layers */
-.projects-bg {
-    background-image:
-      url('/assets/images/projects.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #282a36;
-    background-blend-mode: normal;
-  }
-
-.poems-bg {
-  background-image:
-    url('/assets/images/poems.png');
+.about-bg,
+.projects-bg,
+.poems-bg,
+.sound-of-spring-bg,
+.yearning-bg,
+.starry-night-bg,
+.labyrinth-bg {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -82,83 +66,176 @@ body.full-width {
   background-blend-mode: normal;
 }
 
-/* Header */
-body.full-width header {
-  background-color: transparent;
+.about-bg          { background-image: url('/assets/images/landscape/about.png'); }
+.projects-bg       { background-image: url('/assets/images/landscape/projects.png'); }
+.poems-bg          { background-image: url('/assets/images/landscape/poems.png'); }
+.sound-of-spring-bg{ background-image: url('/assets/images/landscape/sound_of_spring.png'); }
+.yearning-bg       { background-image: url('/assets/images/landscape/flight.png'); }
+.starry-night-bg   { background-image: url('/assets/images/landscape/starry_night.png'); }
+.labyrinth-bg      { background-image: url('/assets/images/landscape/labyrinth.png'); }
+
+@media screen and (orientation: portrait) {
+  .about-bg          { background-image: url('/assets/images/portrait/about.png'); }
+  .projects-bg       { background-image: url('/assets/images/portrait/projects.png'); }
+  .poems-bg          { background-image: url('/assets/images/portrait/poems.png'); }
+  .sound-of-spring-bg{ background-image: url('/assets/images/portrait/sound_of_spring.png'); }
+  .yearning-bg       { background-image: url('/assets/images/portrait/flight.png'); }
+  .starry-night-bg   { background-image: url('/assets/images/portrait/starry_night.png'); }
+  .labyrinth-bg      { background-image: url('/assets/images/portrait/labyrinth.png'); }
 }
 
+/* Header & Nav ----------------------------------------------------------- */
 header {
-  margin-bottom: 2rem;
-  padding: 1rem 2rem;
+  margin-bottom: 2vh;
+  padding: 1vh 2vw;
   z-index: 1;
 }
 
 nav {
   display: flex;
-  gap: 1rem;
+  gap: 1vw;
 }
 
 nav a {
   text-decoration: none;
+  padding: 0.5vh 1vw;
+  border-radius: 0.4vw;
+  background-color: rgba(40, 42, 54, 0.75);
   color: var(--fg);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  backdrop-filter: blur(1px);
   transition: background-color 0.3s;
-  background-color: rgba(0, 0, 0, 0.2);
 }
 
 nav a:hover {
   background-color: var(--line);
 }
 
-/* Main Content */
+/* Main Layout ------------------------------------------------------------ */
 main {
   flex-grow: 1;
   width: 100%;
-  padding: 2rem;
+  padding: 2vh;
 }
 
-h1, h2 {
+/* Headings --------------------------------------------------------------- */
+h1,
+h2 {
   color: var(--fg);
 }
 
-h1 {
-  margin-bottom: 1.5rem;
+h1 { margin-bottom: 1.5vh; }
+h2 { margin: 1.5vh 0 1vh; }
+
+.page-title {
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  font-size: clamp(1.5rem, 5vw, 3.5rem);
+  margin-top: 1vh;
 }
 
-h2 {
-  margin: 1.5rem 0 1rem;
+.profile-name {
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+  margin-top: 1vh;
 }
 
-/* Profile Image */
+/* Profile Image ---------------------------------------------------------- */
 .profile-pic {
-  width: 10%;
-  height: 10%;
+  width: 10vw;
+  height: 10vw;
+  max-width: 20vw;
+  max-height: 20vw;
   border-radius: 50%;
   object-fit: cover;
-  margin: 1rem auto;
-  display: block;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  border: 0.4vw solid var(--orange);
+  box-shadow: 0 0 2vw rgba(189, 147, 249, 0.6);
+  margin-bottom: 1vh;
 }
 
-/* Floating Card Grid */
-.card-grid {
+/* About Flexbox ---------------------------------------------------------- */
+.about-flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
   justify-content: center;
-  margin-top: 2rem;
+  align-items: center;
+  gap: 2vw;
+  max-width: 70vw;
+  margin: 15vh auto;
+  padding: 2vh;
+  background-color: rgba(40, 42, 54, 0.85);
+  border-radius: 1vw;
+  box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(1px);
+}
+
+.about-image-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-bio-box {
+  flex: 1 1 40vw;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--fg);
+}
+
+.about-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2vh;
+  margin-top: 2vh;
+}
+
+.about-links .resume_button {
+  font-size: 1.5vw;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.about-links .resume_button:hover {
+  background-color: var(--orange);
+  color: var(--bg);
+}
+
+.icon-link img {
+  width: 1.5vw;
+  height: auto;
+  filter: brightness(1.2);
+  transition: transform 0.2s ease;
+}
+
+.icon-link img:hover {
+  transform: scale(1.1);
+}
+
+/* Card Grid -------------------------------------------------------------- */
+.card-grid {
+  display: grid;
+  max-width: 70vw;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vw;
+  justify-content: center;
+  padding: 2vh 4vw;
+  margin: auto;
 }
 
 .card {
-  background: var(--line);
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  max-width: 30vw;
+  background-color: rgba(68, 71, 90, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1vw;
+  box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.4);
   padding: 1rem;
-  width: 280px;
   text-align: center;
-  text-decoration: none;
   color: var(--fg);
+  backdrop-filter: blur(1px);
   transition: transform 0.2s ease, background-color 0.3s;
 }
 
@@ -168,54 +245,60 @@ h2 {
   color: var(--bg);
 }
 
-/* Project & Poem Section Base */
-.project, .poem {
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border-radius: 8px;
-  background-color: var(--line);
-}
-
-/* Poem Page Layout */
-.poem-layout {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: flex-start;
-  margin-top: 2rem;
-}
-
-.poem-text {
-  flex: 2;
-  white-space: pre-wrap;
-}
-
-.poem-image {
-  flex: 1;
-}
-
-.poem-image img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.4);
-}
-
-/* Footer */
-body.full-width footer {
-  background-color: transparent;
-}
-
+/* Footer ----------------------------------------------------------------- */
 footer {
   margin-top: auto;
-  padding: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 1vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   color: var(--comment);
 }
 
-/* Title over Backgrounds */
-.page-title {
-  text-align: center;
-  color: var(--fg);
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+/* Poem Layout ------------------------------------------------------------ */
+.poem-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 80vh;
+  width: 100vw; /* Full viewport width */
+  padding: 2vh 2vw;
+  box-sizing: border-box;
+  overflow: hidden;
 }
+
+.poem-card {
+  text-align: center;
+  max-height: 80vh;
+  width: 50vw;
+  max-width: 90vw;
+  overflow-y: auto;
+  background-color: rgba(40, 42, 54, 0.75);
+  border-radius: 1vw;
+  box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.4);
+  color: var(--fg);
+  backdrop-filter: blur(1px);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  padding: 2vh 2vw;
+}
+
+/* Alternate poem-card style (kept for reference) ------------------------- */
+/*
+.poem-card {
+  max-height: 80vh;
+  width: 50vw;
+  padding: 2vh 2vw;
+  overflow-y: auto;
+  background-color: rgba(40, 42, 54, 0.75);
+  border-radius: 1vw;
+  box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.4);
+  color: var(--fg);
+  backdrop-filter: blur(3px);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  justify-content: center;
+  text-align: center;
+}
+*/

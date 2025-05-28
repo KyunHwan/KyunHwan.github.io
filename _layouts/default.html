@@ -16,6 +16,8 @@
     {% assign bg_class = 'background-full projects-bg' %}
   {% elsif page.class == 'poems-page' %}
     {% assign bg_class = 'background-full poems-bg' %}
+  {% elsif page.class == 'about-page' %}
+    {% assign bg_class = 'background-full about-bg' %}
   {% endif %}
 
   <div class="{{ bg_class }}">

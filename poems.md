@@ -6,6 +6,7 @@ permalink: /poems/
 ---
 
 # Poems
+{: .page-title}
 
 <div class="card-grid">
   {% for poem in site.poems %}

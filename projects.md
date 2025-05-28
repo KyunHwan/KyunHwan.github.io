@@ -6,6 +6,7 @@ permalink: /projects/
 ---
 
 # Projects
+{: .page-title}
 
 <div class="card-grid">
   {% for project in site.projects %}
