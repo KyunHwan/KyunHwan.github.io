@@ -21,7 +21,7 @@ permalink: /
   </div>
   <div class="about-bio-box">
     <p>
-      Hi, I'm Peter Kim, a Canadian currently living in Korea. My journey started with a fascination for mechanical engineering, admittedly inspired by Iron Man, but soon shifted toward the captivating world of AI. My biggest motivations in life have always been helping people and having fun while doing it, which led me to pursue engineering roles in the medical sector. Outside of work, you'll often find me lost in writing poetry, playing the piano, or taking photos of what I find to be beautiful—passions that keep my creativity flowing and bring joy to my everyday life.
+      Hi, I'm Peter, a Canadian currently living in Korea. My journey started with a fascination for mechanical engineering, admittedly inspired by Iron Man, but soon shifted toward the captivating world of AI. My biggest motivations in life have always been helping people and having fun while doing it, which led me to pursue engineering roles in the medical sector. Outside of work, you'll often find me lost in writing poetry, playing the piano, or taking photos of what I find to be beautiful—passions that keep my creativity flowing and bring joy to my everyday life.
       <br><br>
       Some images on this website are based on my own photographs. Enjoy!
     </p>
