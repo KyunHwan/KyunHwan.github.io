@@ -7,7 +7,7 @@ permalink: /
 
 <div class="about-flex">
   <div class="about-image-stack">
-    <img class="profile-pic" src="{{ '/assets/images/profile/profile.png' | relative_url }}" alt="Profile picture of {{ site.author.name }}" />
+    <img class="profile-pic" src="{{ 'assets/images/profile/profile.png' | relative_url }}" alt="Profile picture of {{ site.author.name }}" />
     <h1 class="profile-name">Peter Kim</h1>
     <div class="about-links">
       <a href="{{ '/assets/files/resume.pdf' | relative_url }}" class="resume_button" target="_blank">📄</a>
