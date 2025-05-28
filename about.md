@@ -7,7 +7,7 @@ permalink: /
 
 <div class="about-flex">
   <div class="about-image-stack">
-    <img class="profile-pic" src="{{ 'assets/images/profile/profile.png' | relative_url }}" alt="Profile picture of {{ site.author.name }}" />
+    <img class="profile-pic" src="{{ '/assets/images/profile/profile.png' | relative_url }}" alt="Profile picture of {{ site.author.name }}" />
     <h1 class="profile-name">Peter Kim</h1>
     <div class="about-links">
       <a href="{{ '/assets/files/resume.pdf' | relative_url }}" class="resume_button" target="_blank">📄</a>
@@ -21,9 +21,7 @@ permalink: /
   </div>
   <div class="about-bio-box">
     <p>
-      Welcome to my website! I'm Peter Kim, a full-stack web developer passionate about digital storytelling and stylized retro web design. I build aesthetic, fast-loading websites using Jekyll and GitHub Pages.
-      <br><br>
-      My interests range from handcrafted code to poetic prose. Browse my projects and poems to see how I blend tech with creativity.
+      Hi, I'm Peter Kim, a Canadian currently living in Korea. My journey started with a fascination for mechanical engineering, admittedly inspired by Iron Man, but soon shifted toward the captivating world of AI. My biggest motivations in life have always been helping people and having fun while doing it, which led me to pursue engineering roles in the medical sector. Outside of work, you'll often find me lost in writing poetry or playing the piano, two passions that keep my creativity flowing and bring joy to my everyday life.
     </p>
   </div>
 </div>
