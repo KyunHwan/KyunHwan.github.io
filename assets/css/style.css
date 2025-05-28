@@ -242,6 +242,7 @@ h2 { margin: 1.5vh 0 1vh; }
 
 .card h2 {
   text-decoration: none;
+  word-break: break-word;
 }
 
 .card:hover {
@@ -250,6 +251,24 @@ h2 { margin: 1.5vh 0 1vh; }
   background-color: var(--purple);
   color: var(--bg);
 }
+
+@media screen and (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    padding: 2vh 2vw;
+  }
+
+  .card {
+    max-width: 90vw;
+    font-size: 1rem;
+    word-wrap: break-word;
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+  }
+}
+
 
 /* Footer ----------------------------------------------------------------- */
 footer {
