@@ -189,6 +189,9 @@ h2 { margin: 1.5vh 0 1vh; }
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--fg);
+  max-height: 30vh;       /* Adjust based on design */
+  overflow-y: auto;
+  padding-right: 1vw;     /* Optional: avoid text flush against scrollbar */
 }
 
 .about-links {
@@ -314,23 +317,3 @@ footer {
   white-space: pre-wrap;
   padding: 2vh 2vw;
 }
-
-/* Alternate poem-card style (kept for reference) ------------------------- */
-/*
-.poem-card {
-  max-height: 80vh;
-  width: 50vw;
-  padding: 2vh 2vw;
-  overflow-y: auto;
-  background-color: rgba(40, 42, 54, 0.75);
-  border-radius: 1vw;
-  box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.4);
-  color: var(--fg);
-  backdrop-filter: blur(3px);
-  font-size: 1.2rem;
-  line-height: 1.8;
-  white-space: pre-wrap;
-  justify-content: center;
-  text-align: center;
-}
-*/
