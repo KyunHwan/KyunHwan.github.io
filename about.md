@@ -10,7 +10,9 @@ permalink: /
     <img class="profile-pic" src="{{ '/assets/images/profile/profile.png' | relative_url }}" alt="Profile picture of {{ site.author.name }}" />
     <h1 class="profile-name">Peter Kim</h1>
     <div class="about-links">
-      <a href="{{ '/assets/files/resume.pdf' | relative_url }}" class="resume_button" target="_blank">📄</a>
+      <a href="{{ '/assets/files/resume.pdf' | relative_url }}" class="icon-link" target="_blank"> 
+      <img src="{{ '/assets/icons/resume.png' | relative_url }}" alt="Resume" />
+      </a>
       <a href="https://github.com/KyunHwan" class="icon-link" target="_blank">
         <img src="{{ '/assets/icons/github.png' | relative_url }}" alt="GitHub" />
       </a>
