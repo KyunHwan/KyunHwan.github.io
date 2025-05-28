@@ -189,7 +189,7 @@ h2 { margin: 1.5vh 0 1vh; }
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--fg);
-  max-height: 30vh;       /* Adjust based on design */
+  max-height: 25vh;       /* Adjust based on design */
   overflow-y: auto;
   padding-right: 1vw;     /* Optional: avoid text flush against scrollbar */
 }
