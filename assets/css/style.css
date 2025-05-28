@@ -66,9 +66,9 @@ body.full-width {
   background-blend-mode: normal;
 }
 
-.about-bg          { background-image: url('assets/images/landscape/about.png'); }
-.projects-bg       { background-image: url('assets/images/landscape/projects.png'); }
-.poems-bg          { background-image: url('assets/images/landscape/poems.png'); }
+.about-bg          { background-image: url('/assets/images/landscape/about.png'); }
+.projects-bg       { background-image: url('/assets/images/landscape/projects.png'); }
+.poems-bg          { background-image: url('/assets/images/landscape/poems.png'); }
 .sound-of-spring-bg{ background-image: url('assets/images/landscape/sound_of_spring.png'); }
 .yearning-bg       { background-image: url('assets/images/landscape/flight.png'); }
 .starry-night-bg   { background-image: url('assets/images/landscape/starry_night.png'); }
@@ -227,6 +227,7 @@ h2 { margin: 1.5vh 0 1vh; }
 }
 
 .card {
+  text-decoration: none;
   max-width: 30vw;
   background-color: rgba(68, 71, 90, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -244,6 +245,7 @@ h2 { margin: 1.5vh 0 1vh; }
 }
 
 .card:hover {
+  text-decoration: none;
   transform: scale(1.05);
   background-color: var(--purple);
   color: var(--bg);
