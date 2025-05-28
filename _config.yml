@@ -1,103 +1,48 @@
-# --- basic info ---------------------------------------------------------------
-title: "Peter Kim"
-remote_theme: thiagorossener/jekflix-template   # swap for any official theme
-url: "https://KyunHwan.github.io"
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Hero image settings
-show_hero: true
-hero_image: "assets/img/hero/hero-bg.jpg"
-hero_image_alt: "Background image"
-hero_height: 100vh
-hero_darken: true
-
-# --- collections --------------------------------------------------------------
-collections:
-    projects:
-        output: true
-        permalink: /projects/:title/
-    poems:
-        output: true
-        permalink: /poems/:title/
-    photos:
-        output: true
-        permalink: /photos/:title/
-
-# --- plugins ------------------------------------------------------------------
-plugins:
-  - jekyll-paginate
-  - jekyll-paginate-content
-  - jekyll-seo-tag
-
-tags:
-  - portfolio
-  - poetry
-  - photography
-  - projects
-email: youremail@xyz.com
-menu:
-  - title: Home
-    url: /
-  - title: Projects
-    url: /projects
-  - title: Poetry
-    url: /poems
-  - title: Photos
-    url: /photos
-
-# Social Media Settings
-# Remove the item if you don't need it
-github_username: github_username
-facebook_username: facebook_username
-twitter_username: twitter_username
-instagram_username: instagram_username
-linkedin_username: linkedin_username
-medium_username: medium_username
-
-# Posts Settings
-show_time_bar: true
-show_modal_on_exit: false
-show_modal_on_finish_post: true
-two_columns_layout: true
-
-# Advanced Settings
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
-google_analytics: "UA-XXXXXXXX-X"
-language: "en"
-categories_folder: category
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Peter Kim
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "/about" # the subpath of your site, e.g. /blog
+url: "https://KyunHwan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  KyunHwan
 
 # Build settings
 markdown: kramdown
-highlighter: rouge
-permalink: /:title/
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 collections:
-  authors:
+  projects:
     output: true
-paginate_path: "/page/:num/"
-show_get_theme_btn: true
-use_logo: false
+  poems:
+    output: true
 
-# Content paginator
-paginate_content:
-  enabled: true
-  debug: false
-  collections:
-    - posts
-  auto: false
-  separator: "--page-break--"
-  permalink: "/:num/"
-  seo_canonical: true
-  properties:
-    part:
-      is_generated: true
-    last:
-      is_generated: true
-    single:
-      is_generated: true
-
-# SASS
-sass:
-  style: compressed
-
-# Site Settings
-description: "Personal website of Peter Kim - Projects, Poetry, and Photography"
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
