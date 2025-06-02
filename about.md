@@ -23,9 +23,11 @@ permalink: /
   </div>
   <div class="about-bio-box">
     <p>
-      Hi, I'm Peter, a Canadian currently living in Korea. My journey started with a fascination for mechanical engineering, admittedly inspired by Iron Man, but soon shifted toward the captivating world of AI. My biggest motivations in life have always been helping people and having fun while doing it, which led me to pursue engineering roles in the medical sector. Outside of work, you'll often find me lost in writing poetry, playing the piano, or taking photos of what I find to be beautiful—passions that keep my creativity flowing and bring joy to my everyday life.
+      Hi, I’m Peter, a Canadian currently calling Korea home. What began as a childhood fascination with mechanical engineering, sparked (admittedly) by Iron Man, soon blossomed into a deeper love for the world of AI. At my core, I’m driven by two simple truths: helping people and having fun along the way. These values naturally led me to engineering roles in the medical sector. Having spent a few years in this industry, I’m now ready to explore other fast-evolving sectors. 
+    <br><br>
+When I step away from work, you’ll often find me lost in the rhythm of writing poetry, coaxing melodies from the piano, or chasing fleeting moments of beauty through my camera lens. These passions keep my creativity flowing and fill my every day with a sense of wonder. Music, too, is a constant companion—jazz and 1980s Japanese city pop resonate most deeply with me, and I return time and again to the timeless tones of Stan Getz and Tatsuro Yamashita. 
       <br><br>
-      Some images on this website are based on my own photographs. Enjoy!
+      Some images on this website are based on my own photographs, and I have posted some of the poems I’ve written. Enjoy!
     </p>
   </div>
 </div>
