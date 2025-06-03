@@ -117,6 +117,15 @@ nav a:hover {
   flex-direction: column;
   min-height: 100vh;
 }
+/* “Make the header inside .site-wrapper stick to the top” */
+/* “Only change site-wrapper CSS” means adding this selector here: */
+.site-wrapper > header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;         /* ensure it sits above the rest of the content */
+}
 
 /* Main Layout ------------------------------------------------------------ */
 main {
@@ -321,4 +330,71 @@ footer {
   line-height: 1.8;
   white-space: pre-wrap;
   padding: 2vh 2vw;
+}
+
+/* Project Layout ------------------------------------------------------------ */
+.project-page {
+  display: flex;
+  flex-direction: column;    /* stack children vertically */
+  align-items: center;       /* center children horizontally */
+  /* no height:100vh; no overflow:auto */
+
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;             /* small padding all around */
+}
+
+.project-content {
+  /* allow it to shrink on narrow screens, but never exceed 90% of viewport */
+  width: 100%;
+  max-width: 50vw;
+  margin: 1rem 0;            /* vertical spacing from top/bottom */
+  
+  text-align: left;          /* keep text left-aligned */
+  word-break: break-word;    /* force‐wrap long strings */
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.project-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@media screen and (orientation: portrait) {
+  .project-content { max-width: 90vw; }
+}
+
+.project-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.project-github-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--orange);
+}
+
+.project-github-link:hover {
+  color: var(--yellow);
+}
+
+.project-github-link img {
+  width: 1.8rem;
+  height: auto;
+  margin-right: 0.3rem;
+  filter: brightness(1.1);
+  transition: transform 0.2s ease;
+}
+
+.project-github-link:hover img {
+  transform: scale(1.1);
 }
