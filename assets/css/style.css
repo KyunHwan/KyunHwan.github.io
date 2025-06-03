@@ -111,6 +111,11 @@ nav a {
 nav a:hover {
   background-color: var(--line);
 }
+.default-site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 .site-wrapper {
   display: flex;
