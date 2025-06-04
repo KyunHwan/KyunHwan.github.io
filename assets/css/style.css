@@ -403,3 +403,102 @@ footer {
 .project-github-link:hover img {
   transform: scale(1.1);
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+/* ----------------------------------------
+   1. Sidebar container
+   ---------------------------------------- */
+   .sidebar {
+    position: fixed;
+    top: 6vh;               /* push down a bit if you have a fixed header */
+    left: 1vw;              /* distance from left edge of viewport */
+    width: 220px;           /* choose your sidebar width */
+    max-width: 20vw;        /* optionally cap relative to viewport */
+    padding: 1rem 0.5rem;   /* vertical + horizontal padding */
+    background-color: rgba(40, 42, 54, 0.95);
+    border-right: 1px solid var(--line);
+    overflow-y: auto;       /* scroll if the ToC is tall */
+    height: calc(100vh - 6vh);  /* fill the vertical space below header */
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
+    z-index: 50;            /* sit above main content, below header if any */
+  }
+  
+  /* Remove default list styles and indenting */
+  .sidebar ul {
+    list-style: none;
+    padding-left: 0.5rem;
+  }
+  
+  .sidebar li {
+    margin-bottom: 0.8rem;
+  }
+  
+  .sidebar a {
+    color: var(--cyan);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ----------------------------------------
+     2. Shift .project-content to the right
+     ---------------------------------------- */
+  /* 
+     Since .project-content is currently centered,
+     we simply give it enough left margin so that it never
+     collides with the sidebar. 
+  */
+  .project-content {
+    margin-left: 260px;  /* = sidebar width + some gap (e.g. 220px + 40px) */
+    /* existing rules remain unchanged */
+    width: 100%;
+    max-width: 50vw;
+    margin: 1rem 0; 
+    text-align: left;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  
+  /* ----------------------------------------
+     3. If you have a fixed header at top, make sure .sidebar sits below it:
+     (Example: if your header height is ~6vh, adjust "top" on .sidebar)
+     ---------------------------------------- */
+  /* 
+     .site-wrapper > header {
+       position: fixed;
+       top: 0;
+       left: 0;
+       right: 0;
+       z-index: 100; 
+     }
+     Then .sidebar { top: 6vh; height: calc(100vh - 6vh); }
+  */
+  
+  /* ----------------------------------------
+     4. Responsive tweak (optional):
+        On smaller screens, you might want to hide or collapse the sidebar:
+     ---------------------------------------- */
+  @media screen and (max-width: 1024px) {
+    .sidebar {
+      display: none;            /* hide sidebar on narrow viewports */
+    }
+    .project-content {
+      margin-left: 0;           /* revert to full width */
+    }
+  }
