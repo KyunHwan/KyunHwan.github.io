@@ -20,6 +20,10 @@ date: 2024-03-20
           <li><a href="#memory-efficiency">Importance of memory access efficiency</a></li>
           <li><a href="#cuda-memory-types">CUDA memory types</a></li>
         </ul>
+        <li><a href="#instant-ngp">Instant NGP</a></li>
+        <ul>
+          <li><a href="#multi-res-enc">Multi-resolution hash encoding</a></li>
+        </ul>
       </ul>
     </div>
 
@@ -224,8 +228,87 @@ date: 2024-03-20
     <h4>Global variables</h4>
     <b><i>Global variable</i></b> will be placed in the global memory. They are visible to all threads of all kernels. So they can be used as a means for threads to collaborate across blocks. But there is currently no easy way to synchronize between threads from different thread blocks or to ensure data consistency across threads in accessing global memory other than using atomic operations or terminating the current kernel execution.     
 
+    <br><br><br>
+
+    <h2 id="instant-ngp">Instant-NGP</h2>
+    Nerf represents a continuous 3D function f(x) (density, color, or SDF) with small, fixed memory.
+    
+    <br><br>
+    
+    <h3 id="multi-res-enc">Multi-resolution hash encoding</h3>
+
+    <b><i>Instant-NGP (<a href="https://nvlabs.github.io/instant-ngp/assets/mueller2022instant.pdf">link</a>)</i></b> uses <b><i>multi-resolution hash encoding (<a href="https://www.youtube.com/watch?v=CGqhCc3BrKk&amp;ab_channel=BendingSpoons">link</a>)</i></b> to capture both coarse & fine details. 
+    
     <br><br>
 
+    <h4>Strategy</h4>
+    Use <b>L</b> grid levels (Around 16).
+    <ul>
+      <li> Level <i>0</i> has low resolution (eg. 2<sup>1</sup> cells per axis)</li>
+      <li> Level <i>L - 1</i> has high resolution (eg. 2<sup>19</sup> cells per axis)</li>
+      <li> For each level we store a <i>tiny</i> learnable feature vector of length <i>F</i> (often 2 or 4)</li>
+    </ul>
+
+    <br>
+
+    <h4>Problem</h4>
+    A dense 3-D grid with side length 2<sup>19</sup> would need 2<sup>57</sup> voxels, which could blow up easily if we extend this.
+
+    <br><br>
+
+    <h4>Solution</h4>
+    <b>Hash</b> the integer voxel coordinate (x, y, z) into a much smaller table (~= 2<sup>14</sup> entries per level).
+    <ul>
+      <li> Collisions are okay; the network learns to disentable them</li>
+      <li> Want the hash to be fast and spatially uniform </li>
+    </ul>
+
+    <br>
+
+    Below are the parameters that Instant-NGP uses. 
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Symbol</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Number of levels</td>
+          <td>L</td>
+          <td>16</td>
+        </tr>
+        <tr>
+          <td>Max. entries per level (hash table size)</td>
+          <td>T</td>
+          <td>2<sup>14</sup> to 2<sup>24</sup></td>
+        </tr>
+        <tr>
+          <td>Number of feature dimensions per entry</td>
+          <td>F</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Coarsest resolution</td>
+          <td>N<sub>min</sub></td>
+          <td>16</td>
+        </tr>
+        <tr>
+          <td>Finest resolution</td>
+          <td>N<sub>max</sub></td>
+          <td>512 to 524288</td>
+        </tr>
+      </tbody>
+    </table>
+
+    The task is to make the hash table and the MLP used for Nerf to fit into L2 cache of the GPU, which is 64MB on my laptop RTX 4090. 
+
+    <br><br>
+
+    
+    
     </p>
   </div>
 </div>
