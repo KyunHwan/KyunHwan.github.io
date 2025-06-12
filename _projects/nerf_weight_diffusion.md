@@ -13,7 +13,13 @@ date: 2024-03-21
     <br>
     <br>
 
-    <h2>Considerations</h2>
+    <h2>Possible Benefits</h2>
+    <p>As mentioned above, Nerf weights could be used as the latent representation of a 3D scene. Also, assuming that the captured scene is a static scene, it could be used as a conditioning, along with real-time images that the robotic system sees, in order to discern objects that are more readily movable like people, thereby outputing navigation steps that goes around the person.</p>
+
+    <br>
+    <br>
+
+    <h2>Difficulty Considerations</h2>
     <p>From Section 4 of Learning A Diffusion Prior For Nerfs (<a href="https://arxiv.org/pdf/2304.14473">link</a>), the obfuscation of 3D information when using Nerf representation is evident since there can be multiple different Nerfs that represent the same scene. The paper uses regularization in order to limit the region of representation so as to limit the one-to-many relationship between the scene and the representation, thereby mitigating the confusion for the diffusion model.</p>
   </div>
 </div> 
