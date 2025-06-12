@@ -21,5 +21,7 @@ date: 2024-03-21
 
     <h2>Difficulty Considerations</h2>
     <p>From Section 4 of Learning A Diffusion Prior For Nerfs (<a href="https://arxiv.org/pdf/2304.14473">link</a>), the obfuscation of 3D information when using Nerf representation is evident since there can be multiple different Nerfs that represent the same scene. The paper uses regularization in order to limit the region of representation so as to limit the one-to-many relationship between the scene and the representation, thereby mitigating the confusion for the diffusion model.</p>
+    <br>
+    <p>Additionally, the environment must be such that there's little variation to lighting over time. So an ideal environment would be an indoor scene without much light from the outside.</p>
   </div>
 </div> 
